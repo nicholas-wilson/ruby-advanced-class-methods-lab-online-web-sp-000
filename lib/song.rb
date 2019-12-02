@@ -54,7 +54,7 @@ class Song
     data = filename.split("-")
     song = self.new
     song.artist_name = data[0].chomp
-    song.name = data[1].center(data[1].length)
+    song.name = data[1].center((data[1].length - 4))
     song
   end
 
