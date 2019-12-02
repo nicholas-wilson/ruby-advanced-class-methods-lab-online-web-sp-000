@@ -59,7 +59,12 @@ class Song
   end
 
   def self.create_from_filename(filename)
-
+    data = filename.split("-")
+    song = self.new
+    song.artist_name = data[0].strip
+    song.name = data[1].slice(1, (data[1].length - 5))
+    self.all << song
+    song
   end
 
   def self.destroy_all
